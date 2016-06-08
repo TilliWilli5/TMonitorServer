@@ -1,0 +1,10 @@
+{
+  "name": "tmonitor-server",
+  "version": "0.0.0",
+  "description": "TMonitorServer",
+  "main": "server.js",
+  "author": {
+    "name": "Tilli",
+    "email": ""
+  }
+}
