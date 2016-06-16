@@ -1,3 +1,4 @@
+PRAGMA foreign_keys = ON;
 --users table
 CREATE TABLE IF NOT EXISTS users(
 	name TEXT,
@@ -9,34 +10,41 @@ CREATE TABLE IF NOT EXISTS users(
 );
 --projects table
 CREATE TABLE IF NOT EXISTS projects(
+	rowid INTEGER PRIMARY KEY,
 	name TEXT,
 	description TEXT,
+	ticket TEXT,
 	created DATETIME DEFAULT (datetime('now', 'localtime'))
 );
 --installations table
 CREATE TABLE IF NOT EXISTS installations(
+	rowid INTEGER PRIMARY KEY,
 	name TEXT,
 	description TEXT,
 	token TEXT,
 	created DATETIME DEFAULT (datetime('now', 'localtime')),
-	projectID INT--Reference to `projects.rowid`
+	project_id INT NOT NULL,
+	FOREIGN KEY(project_id) REFERENCES projects(rowid)
 );
 --telemetry data table
 CREATE TABLE IF NOT EXISTS telemetry(
-	installationID INT,--Reference to rowid of `installations`,
+	installation_id INT NOT NULL,
 	created DATETIME DEFAULT (datetime('now', 'localtime')),
 	type INT,
-	creatingTime TEXT,
-	point TEXT
+	creating_time TEXT,
+	point TEXT,
+	FOREIGN KEY(installation_id) REFERENCES installations(rowid)
 );
 --ping messages table
 CREATE TABLE IF NOT EXISTS pings(
-	installationID INT,--Reference to rowid of `installations`,
-	created DATETIME DEFAULT (datetime('now', 'localtime'))
+	installation_id INT NOT NULL,--Reference to rowid of `installations`,
+	last_update DATETIME DEFAULT (datetime('now', 'localtime')),
+	FOREIGN KEY(installation_id) REFERENCES installations(rowid)
 );
 --orders for installations
 CREATE TABLE IF NOT EXISTS orders(
-	installationID INT,--Reference to rowid of `installations`,
+	installation_id INT,
 	created DATETIME DEFAULT (datetime('now', 'localtime')),
-	name TEXT
+	name TEXT,
+	FOREIGN KEY(installation_id) REFERENCES installations(rowid)
 );

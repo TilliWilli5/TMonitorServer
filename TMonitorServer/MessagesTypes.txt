@@ -1,0 +1,31 @@
+﻿1. Общий вид сообщений
+
+req.body
+	message	"checkToken"	String
+	sendingTime	"06/08/2016 22:22:47"	String
+	signature	"{"installationToken":"a6089910-2284-47cf-b925-f18981700041","installationDescrip... (length: 183)"	String
+	tick	0	Number
+******************************************************************************************************************************************
+2. checkToken
+
+req.body
+	message	"checkToken"	String
+	sendingTime	"06/08/2016 22:22:47"	String
+	signature	"{"installationToken":"a6089910-2284-47cf-b925-f18981700041","installationDescrip... (length: 183)"	String
+	tick	0	Number
+******************************************************************************************************************************************
+3. ping
+
+req.body
+	message	"ping"	String
+	sendingTime	"06/08/2016 22:22:47"	String
+	signature	"{"installationToken":"a6089910-2284-47cf-b925-f18981700041","installationDescrip... (length: 183)"	String
+	tick	0	Number
+******************************************************************************************************************************************
+3. Телеметрия
+
+req.body
+	message	"[...]"	String
+	sendingTime	"06/08/2016 22:22:47"	String
+	signature	"{"installationToken":"a6089910-2284-47cf-b925-f18981700041","installationDescrip... (length: 183)"	String
+	tick	0	Number

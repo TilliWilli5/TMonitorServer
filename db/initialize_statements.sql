@@ -1,1 +1,0 @@
-CREATE TABLE users(name TEXT,password TEXT,email TEXT,privilege TEXT,created DATETIME DEFAULT datetime('now', 'localtime'));
