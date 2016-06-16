@@ -1,0 +1,11 @@
+{
+    "isLoadedFromFile":true,
+    "appRootFolder":"C:/_Tilli/TMonitorServer/TMonitorServer",
+    "templateFolder":"C:/_Tilli/TMonitorServer/TMonitorServer/_Templates",
+    "port":80,
+    "webSubdomain":"/",
+    "staticFilesPath":"C:/_Tilli/TMonitorServer/TMonitorServer/_Static",
+    "webAuth":"/auth",
+    "webReg":"/reg",
+    "webDashboard":"/dashboard"
+}

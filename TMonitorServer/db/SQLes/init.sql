@@ -1,7 +1,7 @@
 PRAGMA foreign_keys = ON;
 --users table
 CREATE TABLE IF NOT EXISTS users(
-	name TEXT,
+	login TEXT,
 	password TEXT,
 	email TEXT,
 	privilege TEXT,--admin|viewer|user

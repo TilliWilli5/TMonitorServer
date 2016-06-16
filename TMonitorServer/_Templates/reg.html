@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META parts -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS includes -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/_Static/CSS/welcome.css">
+        <!-- JS includes -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="/_Static/JS/reg.js"></script>
+        <!-- Additionals includes -->
+        {{headAdditional}}
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- Header -->
+            <div class="jumbotron text-center title">
+                <h3>TMonitor</h3>
+                <h4>Signup</h4>
+            </div>
+            <!-- Form -->
+            <form id="theRegForm" class="form-signin">
+            <h2 class="form-signin-heading text-center">Please fill out the form</h2>
+            
+            <div class="form-group has-feedback">
+            <label for="inputLogin">Login</label>
+            <input type="text" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
+            <span class="glyphicon form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group has-feedback">
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <span class="glyphicon form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group has-feedback">
+            <label for="inputEmail">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address">
+            <span class="glyphicon form-control-feedback"></span>
+            </div>
+            
+            <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            </div>
+            <button id="theSubmitButton" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+        </form>
+        <!-- Modal -->
+        
+        
+        </div>
+    </body>
+</html>

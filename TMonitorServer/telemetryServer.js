@@ -1,4 +1,4 @@
-﻿var config = require("./cConfigurator.js");
+﻿var config = require("./Core/CConfigurator.js");
 
 var express = require('express');
 var app = express();
@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const theParser = require("./cTelemetryParser.js");
+const theParser = require("./Core/CTelemetryParser.js");
 
 app.get('/', function (req, res) {
 	res.status(200);
