@@ -12,27 +12,52 @@ CPageBuilder.core = {};
 //
 CPageBuilder.RootHandler = function(pReq, pRes)
 {
-    if(pReq.method.toUpperCase() === "GET")
-    {
-        if(pReq.cookies.userSessionID)
+    auth.VerifyUser(pReq, (pUserInfo)=>{
+        if(pUserInfo.isAuthorized)
         {
-            if(auth.checkUserSessionID(1))
-            {
-                pRes.redirect("/dashboard");
-            }
-            else
-            {
-                pRes.render("auth.html");
-            }
+            pRes.redirect("/dashboard");
         }
         else
         {
-            pRes.render("reg.html");
+            pRes.redirect("/auth");
         }
-        
-    }
-    else
-    {
-        
-    }
+    });
+};
+CPageBuilder.AuthHandler = function(pReq, pRes)
+{
+    auth.VerifyUser(pReq, (pUserInfo)=>{
+        if(pUserInfo.isAuthorized)
+        {
+            pRes.redirect("/dashboard");
+        }
+        else
+        {
+            pRes.render("auth.html");
+        }
+    });
+};
+CPageBuilder.RegHandler = function(pReq, pRes)
+{
+    auth.VerifyUser(pReq, (pUserInfo)=>{
+        if(pUserInfo.isAuthorized)
+        {
+            pRes.redirect("/dashboard");
+        }
+        else
+        {
+            if(pReq.method.toUpperCase() === "POST")
+            {
+                db.CheckUserExists();
+                var response = {};
+                response.success = false;
+                response.error = "login exists";
+                response.errorID = 5;
+                pRes.send(JSON.stringify(response));
+            }
+            else
+            {
+                pRes.render("reg.html");
+            }
+        }
+    });
 };

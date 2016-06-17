@@ -1,6 +1,7 @@
 PRAGMA foreign_keys = ON;
 --users table
 CREATE TABLE IF NOT EXISTS users(
+	rowid INTEGER PRIMARY KEY,
 	login TEXT,
 	password TEXT,
 	email TEXT,
@@ -47,4 +48,11 @@ CREATE TABLE IF NOT EXISTS orders(
 	created DATETIME DEFAULT (datetime('now', 'localtime')),
 	name TEXT,
 	FOREIGN KEY(installation_id) REFERENCES installations(rowid)
+);
+CREATE TABLE IF NOT EXISTS sessions(
+	user_id INTEGER NOT NULL,
+	usid TEXT NOT NULL,
+	created DATETIME DEFAULT (datetime('now', 'localtime')),
+	expired DATETIME,
+	FOREIGN KEY(user_id) REFERENCES users(rowid)
 );

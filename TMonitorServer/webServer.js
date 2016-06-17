@@ -1,6 +1,6 @@
 ﻿var CConfig = require("./Core/CConfig.js");
 var config = new CConfig();
-config.LoadFromFile("./_Configs/webConf.js");
+config.LoadFromFile("./Core/Configs/webConf.json");
 
 var express = require('express');
 var app = express();
@@ -21,12 +21,28 @@ const pb = require("./Core/CPageBuilder.js");
 var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
+//Address like http://127.0.0.1
 app.get(config.webSubdomain, function (req, res) {
 	pb.RootHandler(req, res);
 });
-app.set(config.webSubdomain, function (req, res) {
+app.post(config.webSubdomain, function (req, res) {
 	pb.RootHandler(req, res);
 });
+//Address like http://127.0.0.1/auth
+app.get(config.webAuth, function (req, res) {
+	pb.AuthHandler(req, res);
+});
+app.post(config.webAuth, function (req, res) {
+	pb.AuthHandler(req, res);
+});
+//Address like http://127.0.0.1/reg
+app.get(config.webReg, function (req, res) {
+	pb.RegHandler(req, res);
+});
+app.post(config.webReg, function (req, res) {
+	pb.RegHandler(req, res);
+});
+//
 app.use(function Response404(pReq, pRes, pNext){
 	pRes.status(404);
 	pRes.render("page404.html");

@@ -1,10 +1,14 @@
-﻿//Настройки
-var databaseName = "db/tm";
-
+﻿var CConfig = require("./CConfig.js");
+var config = new CConfig();
+config.LoadFromFile("./Core/Configs/dbConf.json");
+//Настройки
+var databaseName = config.databaseName;
 //Дальше
 const sqlite3 = require("sqlite3").verbose();
 var db = new sqlite3.Database(databaseName);
-
+db.exec("PRAGMA foreign_keys = ON;")
+//
+var uuid = require('node-uuid');
 //Основной класс кый будет экспортирован
 var CDatabaseBroker = {};
 module.exports = CDatabaseBroker;
@@ -59,4 +63,62 @@ CDatabaseBroker.AddTelemetry = function (pID, pNews) {
 	}
 	var statement = "INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES " + values.join(",");
 	db.exec(statement);
+};
+// CDatabaseBroker.LoadTable = function(pTableName, pCallback)
+// {
+// 	var statement = `SELECT * FROM ${pTableName}`;
+// 	db.all(statement, function(pErrors, pRows){
+// 		pCallback(pErrors, pRows);
+// 	});
+// };
+// CDatabaseBroker.FindUserByUSID = function(pUSID, pCallback)
+// {
+	
+// };
+CDatabaseBroker.CreateUserSession = function(pID, pExpired, pCallback)
+{
+	var tableName = "sessions(user_id, usid, expired)";
+	var usid = uuid.v4();
+	//settings for expire field
+	var defaultTime = 1000*60*60*24;//one day
+	var expiredTime = new Date((new Date()).getTime() + defaultTime);//Текущий момент + один день
+	var statement = `INSERT INTO ${tableName} VALUES(${pID}, "${usid}", "${pExpired}")`;
+	db.exec(statement);
+};
+CDatabaseBroker.DeleteUserSession = function(pID)
+{
+	var statement = `DELETE FROM sessions WHERE user_id=${pID}`;
+	db.exec(statement);
+};
+CDatabaseBroker.Exec = function(pStatement)
+{
+	db.exec(pStatement);
+};
+CDatabaseBroker.GetUserInfoByUSID = function(pUSID, pCallback)
+{
+	var statement = `SELECT  users.rowid,  users.login,  users.password,  users.privilege,  users.created,  users.project_access_field,  sessions.usid,  sessions.created,  sessions.expired FROM  users JOIN sessions ON  users.rowid=sessions.user_id  AND  sessions.usid="${pUSID}"`;
+	db.all(statement, (pErrors, pRows)=>{
+		pCallback(pErrors, pRows);
+	});
+};
+CDatabaseBroker.GetUserInfoByLogPass = function(pLogin, pPassword, pCallback)
+{
+	var statement = `SELECT * FROM users WHERE login="${pLogin}" AND password="${pPassword}"`;
+	db.all(statement, (pErrors, pRows)=>{
+		pCallback(pErrors, pRows);
+	});
+};
+CDatabaseBroker.CheckUserExists = function(pLogin, pCallback)
+{
+	var statement = `SELECT * FROM users WHERE login="${pLogin}"`;
+	db.all(statement, (pErrors, pRows)=>{
+		if(pRows === 0)
+		{
+			pCallback(false);
+		}
+		else
+		{
+			pCallback(true);
+		}
+	});
 };

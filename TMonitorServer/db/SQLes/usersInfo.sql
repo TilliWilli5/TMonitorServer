@@ -1,1 +1,0 @@
-INSERT INTO projects(name, description, ticket) VALUES ('Museum of impresionism', 'Музей импресионизма', 'MOI');
