@@ -43,11 +43,24 @@
             <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required>
             <span class="glyphicon form-control-feedback"></span>
             </div>
-            
+            <!--Success-->
+            <div id="successBox" class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong> New user account created. You will be redirected to auth page within 3 seconds.
+            </div>
+            <!--Fail-->
+            <div id="failBox" class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>User exists!</strong> User with such login already exists.
+            </div>
+            <!--Subbmit button-->
             <button id="theSubmitButton" class="btn btn-lg btn-primary btn-block" type="button">Register</button>
         </form>
+        <div class="text-center">
+            <h3>or</h3>
+            <h3><a href="/auth">Sign in</a></h3>
+        </div>
         <!-- Modal -->
-        
         
         </div>
     </body>

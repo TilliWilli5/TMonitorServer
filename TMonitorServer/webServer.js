@@ -42,6 +42,13 @@ app.get(config.webReg, function (req, res) {
 app.post(config.webReg, function (req, res) {
 	pb.RegHandler(req, res);
 });
+//Address like http://127.0.0.1/reg
+app.get(config.webDashboard, function (req, res) {
+	pb.DashboardHandler(req, res);
+});
+app.post(config.webDashboard, function (req, res) {
+	pb.DashboardHandler(req, res);
+});
 //
 app.use(function Response404(pReq, pRes, pNext){
 	pRes.status(404);

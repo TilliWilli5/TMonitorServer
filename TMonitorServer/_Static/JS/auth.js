@@ -12,10 +12,11 @@ $(document).ready(function(){
             {
                 data[formData[kvp].name] = formData[kvp].value; 
             }
+            data.remember = $("#rememberCheckbox")[0].checked;
             // $.getJSON("/reg", data, RegResponseHandler);
             $.ajax({
                method:"POST",
-               url:"/reg",
+               url:"/auth",
                data:JSON.stringify(data),
                contentType:"application/json" 
             }).done(RegResponseHandler);
@@ -33,7 +34,7 @@ function RegResponseHandler(pData)
     {
         $("#failBox").hide();
         $("#successBox").show();
-        setTimeout(()=>{window.location.href = "/";}, 3000);
+        setTimeout(()=>{window.location.href = "/";}, 10);
     }
     else
     {

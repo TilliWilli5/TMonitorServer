@@ -84,6 +84,7 @@ CDatabaseBroker.CreateUserSession = function(pID, pExpired, pCallback)
 	var expiredTime = new Date((new Date()).getTime() + defaultTime);//Текущий момент + один день
 	var statement = `INSERT INTO ${tableName} VALUES(${pID}, "${usid}", "${pExpired}")`;
 	db.exec(statement);
+	return usid;
 };
 CDatabaseBroker.DeleteUserSession = function(pID)
 {
@@ -112,13 +113,26 @@ CDatabaseBroker.CheckUserExists = function(pLogin, pCallback)
 {
 	var statement = `SELECT * FROM users WHERE login="${pLogin}"`;
 	db.all(statement, (pErrors, pRows)=>{
-		if(pRows === 0)
-		{
-			pCallback(false);
-		}
-		else
-		{
-			pCallback(true);
-		}
+		pCallback(pRows.length === 0);
+		// if(pRows.length === 0)
+		// {
+		// 	pCallback(false);
+		// }
+		// else
+		// {
+		// 	pCallback(true);
+		// }
+	});
+};
+CDatabaseBroker.CreateUserAccount = function(pLogin, pPassword, pEmail)
+{
+	var statement = `INSERT INTO users(login, password, email, privilege) VALUES ("${pLogin}","${pPassword}","${pEmail}","user")`;
+	db.exec(statement);
+};
+CDatabaseBroker.TryAuth = function(pLogin, pPassword, pCallback)
+{
+	var statement = `SELECT * FROM users WHERE login="${pLogin}" AND password="${pPassword}"`;
+	db.all(statement, (pErrors, pRows)=>{
+		pCallback(pRows.length === 0);
 	});
 };

@@ -78,3 +78,7 @@ CAuth.VerifyUser = function(pReq, pCallback)
         }
     }
 };
+CAuth.TryAuth = function(pLogin, pPassword, pCallback)
+{
+    db.TryAuth(pLogin, pPassword, pCallback);
+};
