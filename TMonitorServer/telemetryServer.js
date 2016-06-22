@@ -16,7 +16,12 @@ app.get('/', function (req, res) {
 	res.status(200);
 	res.send('alright');
 });
+var gSSE = require("./webServer.js");
 app.post(config.telemetryDC, function (req, res) {
+	if(gSSE.GetResponse() !== null)
+	{
+		gSSE.GetResponse().write(`data: ${JSON.stringify(req.body)}\n\n`);
+	}
 	theParser.Parse(req, res);
 });
 app.listen(config.port, function () {

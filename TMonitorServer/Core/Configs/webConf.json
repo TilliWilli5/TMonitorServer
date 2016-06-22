@@ -1,11 +1,13 @@
 {
     "isLoadedFromFile":true,
-    "appRootFolder":"C:/_Tilli/TMonitorServer/TMonitorServer",
-    "templateFolder":"C:/_Tilli/TMonitorServer/TMonitorServer/_Templates",
+    "appRootFolder":"C:/xampp/htdocs/TMonitorServer/TMonitorServer",
+    "templateFolder":"./_Templates",
     "port":80,
-    "staticFilesPath":"C:/_Tilli/TMonitorServer/TMonitorServer/_Static",
+    "staticFilesPath":"./_Static",
     "webSubdomain":"/",
     "webAuth":"/auth",
     "webReg":"/reg",
-    "webDashboard":"/dashboard"
+    "webDashboard":"/dashboard",
+    "webDevMonitor":"/devmonitor",
+    "webDevMonitorEvents":"/devmonitor/messages"
 }

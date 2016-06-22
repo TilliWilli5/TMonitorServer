@@ -42,12 +42,35 @@ app.get(config.webReg, function (req, res) {
 app.post(config.webReg, function (req, res) {
 	pb.RegHandler(req, res);
 });
-//Address like http://127.0.0.1/reg
+//Address like http://127.0.0.1/dashboard
 app.get(config.webDashboard, function (req, res) {
 	pb.DashboardHandler(req, res);
 });
 app.post(config.webDashboard, function (req, res) {
 	pb.DashboardHandler(req, res);
+});
+//Address like http://127.0.0.1/devmonitor
+app.get(config.webDevMonitor, function (req, res) {
+	pb.DevMonitorHandler(req, res);
+});
+app.post(config.webDevMonitor, function (req, res) {
+	pb.DevMonitorHandler(req, res);
+});
+//Address like http://127.0.0.1/devmonitor/events
+app.get(config.webDevMonitorEvents, function (req, res) {
+	pb.DevMonitorEventsHandler(req, res, gSSE);
+});
+app.post(config.webDevMonitorEvents, function (req, res) {
+	pb.DevMonitorEventsHandler(req, res, gSSE);
+});
+//Test sse http://127.0.0.1/sse
+var gSSE = {};
+gSSE.responseStream = null;
+gSSE.RegisterResponseStream = function(pRes){this.responseStream = pRes;};
+gSSE.GetResponse = function(){return this.responseStream;};
+module.exports = gSSE;
+app.get("/sse", function (req, res) {
+	pb.SSEHandler(req, res, gSSE);
 });
 //
 app.use(function Response404(pReq, pRes, pNext){

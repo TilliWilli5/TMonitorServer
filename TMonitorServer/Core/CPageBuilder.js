@@ -122,3 +122,27 @@ CPageBuilder.DashboardHandler = function(pReq, pRes)
         }
     });
 };
+CPageBuilder.DevMonitorHandler = function(pReq, pRes)
+{
+    pRes.render("devmonitor.html");
+};
+CPageBuilder.DevMonitorEventsHandler = function(pReq, pRes, pGSSE)
+{
+    pRes.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'Access-Control-Allow-Origin': '*'
+    });
+    pRes.write("\n");
+    pGSSE.RegisterResponseStream(pRes);
+    // pRes.write(`data: {"username": "bobby", "time": "02:33:48"}\n`);
+    // pRes.write(`retry: 1000\n`);
+    // pRes.end();
+};
+CPageBuilder.SSEHandler = function(pReq, pRes, pGSSE)
+{
+    pGSSE.GetResponse().write(`data: {"username": "bobby", "time": "02:33:48"}\n\n`);
+    pRes.end("ok");
+    // pGSSE.GetResponse().write(`retry: 1000\n\n`);
+};
