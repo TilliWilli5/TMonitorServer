@@ -1,0 +1,838 @@
+{
+    "projects":[
+        {
+            "label":"Музей Импрессионизма",
+            "ticket":"MOI",
+            "installations":[
+                {
+                    "name":"Bench1.ScientificTests.Tablet",
+                    "label":"Скамья1. Научные эксперименты. Планшет",
+                    "token":"4D6A0591-9525-4517-88A1-9A75C5F43ED1",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Menu.Colours",
+                            "label":"Цвет и цветовая гармония",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Reflection",
+                            "label":"Свет, тень, рефлекс",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Local",
+                            "label":"Ру/Англ на главном меню",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Colours.History",
+                            "label":"История исследования цвета",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Itten",
+                            "label":"Построение круга Иттена",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Harmony",
+                            "label":"Цветовая гармония",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Practic",
+                            "label":"Практическое задание",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Content",
+                            "label":"Содержание",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Skip",
+                            "label":"Пропустить",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Left",
+                            "label":"Влево",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Right",
+                            "label":"Вправо",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.RunBetterfly",
+                            "label":"Выпустить бабочку",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Reflection.Manage",
+                            "label":"Управлять композицией",
+                            "buttonGroup":"Reflection"
+                        },
+                        {
+                            "telemetrySignal":"Reflection.GetExperiment",
+                            "label":"Эксперементировать",
+                            "buttonGroup":"Reflection"
+                        },
+                        {
+                            "telemetrySignal":"Content.Local",
+                            "label":"Ру/Англ",
+                            "buttonGroup":"Content"
+                        },
+                        {
+                            "telemetrySignal":"Content.Quit",
+                            "label":"Выход",
+                            "buttonGroup":"Content"
+                        }
+                    ]
+                },
+                {
+                    "name":"Bench2.ScientificTests.Tablet",
+                    "label":"Скамья2. Научные эксперименты. Планшет",
+                    "token":"B6B3A630-DC5F-4ED6-9029-9703077F344B",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Menu.Colours",
+                            "label":"Цвет и цветовая гармония",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Reflection",
+                            "label":"Свет, тень, рефлекс",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Local",
+                            "label":"Ру/Англ на главном меню",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Colours.History",
+                            "label":"История исследования цвета",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Itten",
+                            "label":"Построение круга Иттена",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Harmony",
+                            "label":"Цветовая гармония",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Practic",
+                            "label":"Практическое задание",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Content",
+                            "label":"Содержание",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Skip",
+                            "label":"Пропустить",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Left",
+                            "label":"Влево",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.Right",
+                            "label":"Вправо",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.RunBetterfly",
+                            "label":"Выпустить бабочку",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Reflection.Manage",
+                            "label":"Управлять композицией",
+                            "buttonGroup":"Reflection"
+                        },
+                        {
+                            "telemetrySignal":"Reflection.GetExperiment",
+                            "label":"Эксперементировать",
+                            "buttonGroup":"Reflection"
+                        },
+                        {
+                            "telemetrySignal":"Content.Local",
+                            "label":"Ру/Англ",
+                            "buttonGroup":"Content"
+                        },
+                        {
+                            "telemetrySignal":"Content.Quit",
+                            "label":"Выход",
+                            "buttonGroup":"Content"
+                        }
+                    ]
+                },
+                {
+                    "name":"Dioramas.Adult",
+                    "label":"Диорамы. Взрослые",
+                    "token":"256E3D2B-3A1B-44A2-9A82-39AF7A4AE810",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Переключение языка - русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Переключение языка - английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Menu.RepinSelect",
+                            "label":"Выбор диорамы Илья Репин в студии",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.GrabarSelect",
+                            "label":"Выбор диорамы Игорь Грабарь на пленэре",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.LampMode",
+                            "label":"Активация фонаря",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Andreeva",
+                            "label":"Портрет Андреевой",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Skeleton",
+                            "label":"Скелет",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Artist",
+                            "label":"Художник",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Selfportrait",
+                            "label":"Автопортрет",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Brushes",
+                            "label":"Кисти в банке",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Books",
+                            "label":"Книги",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Palette",
+                            "label":"Переносная палитра",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Umbrella",
+                            "label":"Зонт",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Paints",
+                            "label":"Краски в тюбиках",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Sketch",
+                            "label":"Этюдник",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Artist",
+                            "label":"Художник",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Brush",
+                            "label":"Плоская кисть",
+                            "buttonGroup":"Grabar"
+                        }
+                    ]
+                },
+                {
+                    "name":"Dioramas.Kids",
+                    "label":"Диорамы. Дети",
+                    "token":"86EF2310-0FE2-4713-9FEF-55767BDCE0EF",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Переключение языка - русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Переключение языка - английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Menu.RepinSelect",
+                            "label":"Выбор диорамы Илья Репин в студии",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.GrabarSelect",
+                            "label":"Выбор диорамы Игорь Грабарь на пленэре",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.LampMode",
+                            "label":"Активация фонаря",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Andreeva",
+                            "label":"Портрет Андреевой",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Skeleton",
+                            "label":"Скелет",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Artist",
+                            "label":"Художник",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Selfportrait",
+                            "label":"Автопортрет",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Brushes",
+                            "label":"Кисти в банке",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Books",
+                            "label":"Книги",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Palette",
+                            "label":"Переносная палитра",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Umbrella",
+                            "label":"Зонт",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Paints",
+                            "label":"Краски в тюбиках",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Sketch",
+                            "label":"Этюдник",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Artist",
+                            "label":"Художник",
+                            "buttonGroup":"Grabar"
+                        },
+                        {
+                            "telemetrySignal":"Grabar.Brush",
+                            "label":"Плоская кисть",
+                            "buttonGroup":"Grabar"
+                        }
+                    ]
+                },
+                {
+                    "name":"PainterTools.Adult",
+                    "label":"Инструменты художника. Взрослые",
+                    "token":"2BEFFCF1-9F47-449E-B331-812EE3562C05",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Переключение языка - русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Переключение языка - английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.FlatBrush",
+                            "label":"Плоская кисть",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Mineral",
+                            "label":"Минерал",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Canvas",
+                            "label":"Холст",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.FanBrush",
+                            "label":"Веерная кисть",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.PaletteKnife",
+                            "label":"Мастихин",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.CalligraphicBrush",
+                            "label":"Каллиграфическая кисть",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.RightAnswer",
+                            "label":"Правильный ответ на вопрос",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.WringAnswer",
+                            "label":"Неправильный ответ на вопрос",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Next",
+                            "label":"Далее",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Replay",
+                            "label":"Реплей",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Menu",
+                            "label":"Меню",
+                            "buttonGroup":"Instrument"
+                        }
+                    ]
+                },
+                {
+                    "name":"PainterTools.Kids",
+                    "label":"Инструменты художника. Дети",
+                    "token":"7F6A97B9-408A-47B1-84A3-376336DFA719",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Переключение языка - русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Переключение языка - английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.FlatBrush",
+                            "label":"Плоская кисть",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Mineral",
+                            "label":"Минерал",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Canvas",
+                            "label":"Холст",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.FanBrush",
+                            "label":"Веерная кисть",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.PaletteKnife",
+                            "label":"Мастихин",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.CalligraphicBrush",
+                            "label":"Каллиграфическая кисть",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.RightAnswer",
+                            "label":"Правильный ответ на вопрос",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.WringAnswer",
+                            "label":"Неправильный ответ на вопрос",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Next",
+                            "label":"Далее",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Replay",
+                            "label":"Реплей",
+                            "buttonGroup":"Instrument"
+                        },
+                        {
+                            "telemetrySignal":"Instrument.Menu",
+                            "label":"Меню",
+                            "buttonGroup":"Instrument"
+                        }
+                    ]
+                },
+                {
+                    "name":"Bench1.MapPicture.TouchScreen",
+                    "label":"Скамья1. Карта российского импрессионизма",
+                    "token":"5B83A056-3CA4-4986-B954-974DD6B8F23B",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Menu.Map",
+                            "label":"Карта русского импрессионизма",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Drawing",
+                            "label":"Как рисуются картины",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Exit",
+                            "label":"Выход (из любого места приложения)",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Map.Artists",
+                            "label":"Лист художников",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.Places",
+                            "label":"Лист мест",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.ArtistSelect",
+                            "label":"Тап по любому художнику",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.PlaceSelect",
+                            "label":"Тап по любому месту в списке",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.MapSelect",
+                            "label":"Тап по маркеру на карте",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.FrameCitySelect",
+                            "label":"Тап по городу на белой плашке",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.FrameArtistSelect",
+                            "label":"Тап по художнику на белой плашке",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Academic",
+                            "label":"Академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Impressionism",
+                            "label":"Импрессионисты",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.PictureChange",
+                            "label":"Смена картины",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Tutor",
+                            "label":"Тутор",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AdditionalNote",
+                            "label":"Нажатие по правой подсказке",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Fullscreen",
+                            "label":"Переход в фулскрин",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage1",
+                            "label":"Этап 1, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage2",
+                            "label":"Этап 2, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage3",
+                            "label":"Этап 3, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage4",
+                            "label":"Этап 4, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage5",
+                            "label":"Этап 5, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage6",
+                            "label":"Этап 6, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage7",
+                            "label":"Этап 7, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage1",
+                            "label":"Этап 1, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage2",
+                            "label":"Этап 2, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage3",
+                            "label":"Этап 3, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage4",
+                            "label":"Этап 4, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage5",
+                            "label":"Этап 5, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        }
+                    ]
+                },
+                {
+                    "name":"Bench2.MapPicture.TouchScreen",
+                    "label":"Скамья2. Карта российского импрессионизма",
+                    "token":"0BA80A05-DF1B-4681-8143-741E249EEEB7",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Menu.Map",
+                            "label":"Карта русского импрессионизма",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Drawing",
+                            "label":"Как рисуются картины",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.Exit",
+                            "label":"Выход (из любого места приложения)",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Map.Artists",
+                            "label":"Лист художников",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.Places",
+                            "label":"Лист мест",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.ArtistSelect",
+                            "label":"Тап по любому художнику",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.PlaceSelect",
+                            "label":"Тап по любому месту в списке",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.MapSelect",
+                            "label":"Тап по маркеру на карте",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.FrameCitySelect",
+                            "label":"Тап по городу на белой плашке",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Map.FrameArtistSelect",
+                            "label":"Тап по художнику на белой плашке",
+                            "buttonGroup":"Map"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Academic",
+                            "label":"Академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Impressionism",
+                            "label":"Импрессионисты",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.PictureChange",
+                            "label":"Смена картины",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Tutor",
+                            "label":"Тутор",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AdditionalNote",
+                            "label":"Нажатие по правой подсказке",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.Fullscreen",
+                            "label":"Переход в фулскрин",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage1",
+                            "label":"Этап 1, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage2",
+                            "label":"Этап 2, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage3",
+                            "label":"Этап 3, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage4",
+                            "label":"Этап 4, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage5",
+                            "label":"Этап 5, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage6",
+                            "label":"Этап 6, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.AcademicStage7",
+                            "label":"Этап 7, академический стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage1",
+                            "label":"Этап 1, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage2",
+                            "label":"Этап 2, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage3",
+                            "label":"Этап 3, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage4",
+                            "label":"Этап 4, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        },
+                        {
+                            "telemetrySignal":"Drawing.ImpressionismStage5",
+                            "label":"Этап 5, импрессионистский стиль",
+                            "buttonGroup":"Drawing"
+                        }
+                    ]
+                },
+                {
+                    "name":"Bench1.ScientificTests.Screen",
+                    "label":"Скамья1. Научные эксперименты. Экран",
+                    "token":"ABF12597-39C4-454C-AE40-833719C8876F",
+                    "telemetry":[]
+                },
+                {
+                    "name":"Bench2.ScientificTests.Screen",
+                    "label":"Скамья2. Научные эксперименты. Экран",
+                    "token":"D6CCC44E-59D6-49D0-B588-B97490BDC802",
+                    "telemetry":[]
+                }
+            ]
+        }
+    ]
+}

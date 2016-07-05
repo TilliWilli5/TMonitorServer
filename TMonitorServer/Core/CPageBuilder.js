@@ -1,6 +1,11 @@
 var CBase = require("./CBase.js");
 var auth = require("./CAuth.js");
 const db = require("./CDatabaseBroker.js");
+var CSC = require("./CStatCalculator.js");
+var calculator = new CSC();
+var CConfig = require("./CConfig.js");
+var tmConf = new CConfig();
+tmConf.LoadFromFile("./Core/Configs/telemetry.json");
 function CPageBuilder(pCore)
 {
     this.Initialize(pCore);
@@ -114,7 +119,24 @@ CPageBuilder.DashboardHandler = function(pReq, pRes)
     auth.VerifyUser(pReq, (pUserInfo)=>{
         if(pUserInfo.isAuthorized)
         {
-            pRes.render("dashboard.html");
+            var data2client = {};
+            calculator.CalcTelemetryStat(null, AfterCalc);
+            function AfterCalc(pRows)
+            {
+                if(pRows === 0)
+                {
+                    pRes.render("dashboard.html", {data2client:`var data={userInfo:null, telemetryData:null}`});
+                }
+                else
+                {
+                    data2client.userInfo = pUserInfo;
+                    data2client.telemetryData = pRows;
+                    data2client.telemetryConf = tmConf.projects;
+                    data2client = JSON.stringify(data2client);
+                    pRes.render("dashboard.html", {data2client:`var data = ${data2client};`});
+                    // pRes.render("dashboard.html", {data2client:JSON.stringify(data2client)});
+                }
+            };
         }
         else
         {

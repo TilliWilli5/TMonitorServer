@@ -1,0 +1,16 @@
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Menu.Colours");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Menu.Reflection");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Menu.Local");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.History");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Itten");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Harmony");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Practic");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Content");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Skip");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Left");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.Right");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Colours.RunBetterfly");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Reflection.Manage");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Reflection.GetExperiment");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Content.Local");
+INSERT INTO telemetry(installation_id, type, creating_time, point) VALUES(6, 1, datetime('now', 'localtime'), "Content.Quit");
