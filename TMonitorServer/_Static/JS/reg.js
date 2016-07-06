@@ -33,7 +33,7 @@ function RegResponseHandler(pData)
     {
         $("#failBox").hide();
         $("#successBox").show();
-        setTimeout(()=>{window.location.href = "/";}, 3000);
+        setTimeout(function(){window.location.href = "/";}, 3000);
     }
     else
     {

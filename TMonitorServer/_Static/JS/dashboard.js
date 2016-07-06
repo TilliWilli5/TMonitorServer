@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 function VisProjectsScreen(pProjectsInfo)
 {
-    pProjectsInfo.forEach((pProject)=>{
+    pProjectsInfo.forEach(function(pProject){
         var projectName = pProject.label;
         var instaCount = pProject.installations.length;
         var template = `<button type="button" class="btn btn-primary" style="cursor:pointer;" onclick="GotoInstallationsScreen();">${projectName} <span class="badge">${instaCount}</span></button>`;
@@ -28,7 +28,7 @@ function GotoInstallationsScreen()
 };
 function VisDashboardHeader(pProjectsInfo)
 {
-    pProjectsInfo.forEach((pProject)=>{
+    pProjectsInfo.forEach(function(pProject){
         var projectName = pProject.label;
         var instaCount = pProject.installations.length;
         var projectTemplate = `<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${projectName} <span class="badge">${instaCount}</span><span class="caret"></span></a>`;
@@ -84,56 +84,59 @@ function ShowStats()
         <div class="panel-heading">${current.bgs[iX]}</div>
         <div class="panel-body">`;
 
-            var info = '<div class="list-group">';
-            //iY - current.telemetryStructure selection
-            for(var iY=0; iY<current.telemetryStructure.length; ++iY)
+        var info = '<div class="list-group">';
+        //iY - current.telemetryStructure selection
+        for(var iY=0; iY<current.telemetryStructure.length; ++iY)
+        {
+            //Проверяем на принадлежность к данной ButtonGroup
+            if(current.telemetryStructure[iY].buttonGroup !== current.bgs[iX])
+                continue;
+            current.buttonGroup[current.bgs[iX]][iY] = {name:current.telemetryStructure[iY].label, value:0};
+            // current.buttonGroup[current.bgs[iX]].name = current.telemetryStructure[iY].label;
+            // current.buttonGroup[current.bgs[iX]].value = 0;
+            for(var iZ=0; iZ<data.telemetryData.length; ++iZ)
             {
-                //Проверяем на принадлежность к данной ButtonGroup
-                if(current.telemetryStructure[iY].buttonGroup !== current.bgs[iX])
-                    continue;
-                current.buttonGroup[current.bgs[iX]][iY] = {name:current.telemetryStructure[iY].label, value:0};
-                // current.buttonGroup[current.bgs[iX]].name = current.telemetryStructure[iY].label;
-                // current.buttonGroup[current.bgs[iX]].value = 0;
-                for(var iZ=0; iZ<data.telemetryData.length; ++iZ)
-                {
-                    
-                    if(data.telemetryConf[current.project].ticket === data.telemetryData[iZ]["projects.ticket"])
-                        if(data.telemetryConf[current.project].installations[current.installation].token === data.telemetryData[iZ]["tm.token"])
-                        {
-                            var theDate = $('#datetimepicker1 input').val();
-                            theDate = theDate.split(".").reverse().join("-");
-                            if(theDate === data.telemetryData[iZ]["tm.dates"])
-                                if(current.telemetryStructure[iY].telemetrySignal === data.telemetryData[iZ]["tm.point"])
-                                {
-                                    current.buttonGroup[current.bgs[iX]][iY].value = data.telemetryData[iZ]["tm.hits"];
-                                    break;
-                                }
-                        }
-                }
-                info += `<a href="#" class="list-group-item">${current.buttonGroup[current.bgs[iX]][iY].name}: ${current.buttonGroup[current.bgs[iX]][iY].value}</a>`;
+                
+                if(data.telemetryConf[current.project].ticket === data.telemetryData[iZ]["projects.ticket"])
+                    if(data.telemetryConf[current.project].installations[current.installation].token === data.telemetryData[iZ]["tm.token"])
+                    {
+                        var theDate = $('#datetimepicker1 input').val();
+                        theDate = theDate.split(".").reverse().join("-");
+                        if(theDate === data.telemetryData[iZ]["tm.dates"])
+                            if(current.telemetryStructure[iY].telemetrySignal === data.telemetryData[iZ]["tm.point"])
+                            {
+                                current.buttonGroup[current.bgs[iX]][iY].value = data.telemetryData[iZ]["tm.hits"];
+                                break;
+                            }
+                    }
             }
-            info += '</div>';
-
-            // var iY=0;
-            // while(iY<data.telemetryData.length)
-            // {
-            //     if(data.telemetryConf[current.project].ticket === data.telemetryData[iY]["projects.ticket"])
-            //     {
-            //         if(data.telemetryConf[current.project].installations[current.installation].token === data.telemetryData[iY]["tm.token"])
-            //         {
-            //             var buttonName = 
-            //             info += `<a href="#" class="list-group-item active">First item</a>`;
-
-            //         }
-
-            //     }
-            // }
-
-            panelBG += info;
+            info += `<a href="#" class="list-group-item">${current.buttonGroup[current.bgs[iX]][iY].name}: ${current.buttonGroup[current.bgs[iX]][iY].value}</a>`;
+        }
+        info += '</div>';
+        panelBG += info;
+        //Строим график исп-уя Highcharts
+            panelBG += `<div id="graph${current.bgs[iX]}" style="width:100%; height:400px;"></div>`;
+        //
         panelBG += '</div>\
         </div>';
         
         $("#statsHere").append(panelBG);
+        //Инициализируем график
+        var cats = [];
+        var dataSet = [];
+        var series = [];
+        for(var iW=0; iW<current.buttonGroup[current.bgs[iX]].length; ++iW)
+        {
+            if(current.buttonGroup[current.bgs[iX]][iW])
+            {
+                cats.push(current.buttonGroup[current.bgs[iX]][iW].name.slice(0,10) + "...");
+                dataSet.push(current.buttonGroup[current.bgs[iX]][iW].value);
+                series.push({name:cats[cats.length-1], data:[dataSet[dataSet.length-1]]});
+            }
+        }
+        console.log(series);
+        VisChart("graph" + current.bgs[iX], cats, dataSet, series);
+        //
     }
     
 
@@ -143,4 +146,46 @@ function Logout()
     document.cookie = `userSessionID=; expires=${new Date(0)}; path=/`;
     window.location.href = "/";
     console.log("Logout");
+};
+function VisChart(pElementID, pCategories, pDataSet, pSeries)
+{
+    //Old simple graph
+    // $('#' + pElementID).highcharts({
+    //     chart: {
+    //         type: 'bar'
+    //     },
+    //     title: {
+    //         text: 'Buttons hits'
+    //     },
+    //     xAxis: {
+    //         categories: pCategories
+    //     },
+    //     yAxis: {
+    //         title: {
+    //             text: 'Hits count'
+    //         }
+    //     },
+    //     series: [{
+    //         name: 'Menu',
+    //         data: pDataSet
+    //     }]
+    // });
+
+    $('#' + pElementID).highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Buttons hits'
+        },
+        xAxis: {
+            categories: ['HITS']
+        },
+        yAxis: {
+            title: {
+                text: 'Hits count'
+            }
+        },
+        series: pSeries
+    });
 };

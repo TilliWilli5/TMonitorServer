@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // alert("fck the apple");
     $("#failBox").hide();
     $("#successBox").hide();
     $("#theSubmitButton").click(function(){
@@ -34,7 +35,7 @@ function RegResponseHandler(pData)
     {
         $("#failBox").hide();
         $("#successBox").show();
-        setTimeout(()=>{window.location.href = "/";}, 10);
+        setTimeout(function(){window.location.href = "/";}, 10);
     }
     else
     {
