@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // var sse = new EventSource("http://95.213.151.109/devmonitor");
-    var sse = new EventSource("http://127.0.0.1/devmonitor/messages");
+    var sse = new EventSource(`http://${general.serverIP}/devmonitor/messages`);
     sse.onmessage = function(pEvent)
     {
         console.log("New message has arrived");

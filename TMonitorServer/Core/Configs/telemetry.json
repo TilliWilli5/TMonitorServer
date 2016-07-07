@@ -833,6 +833,72 @@
                     "telemetry":[]
                 }
             ]
+        },
+        {
+            "label":"МУФ2016 Выставка ТЕСТОВЫЙ",
+            "ticket":"MUF",
+            "installations":[
+                {
+                    "name":"Bench1.ScientificTests.Tablet",
+                    "label":"Multitaction",
+                    "token":"4D6A0591-9525-4517-88A1-9A75C5F43ED1___",
+                    "telemetry":[]
+                },
+                {
+                    "name":"Bench2.ScientificTests.Tablet",
+                    "label":"Видео стена",
+                    "token":"B6B3A630-DC5F-4ED6-9029-9703077F344B",
+                    "telemetry":[]
+                },
+                {
+                    "name":"Dioramas.Adult",
+                    "label":"VR очки с вертолётом",
+                    "token":"256E3D2B-3A1B-44A2-9A82-39AF7A4AE810",
+                    "telemetry":[]
+                },
+                {
+                    "name":"Dioramas.Kids",
+                    "label":"Фотокиоск",
+                    "token":"86EF2310-0FE2-4713-9FEF-55767BDCE0EF",
+                    "telemetry":[
+                        {
+                            "telemetrySignal":"Local.Ru",
+                            "label":"Переключение языка - русский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Local.En",
+                            "label":"Переключение языка - английский",
+                            "buttonGroup":"Local"
+                        },
+                        {
+                            "telemetrySignal":"Menu.RepinSelect",
+                            "label":"Выбор диорамы Илья Репин в студии",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.GrabarSelect",
+                            "label":"Выбор диорамы Игорь Грабарь на пленэре",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Menu.LampMode",
+                            "label":"Активация фонаря",
+                            "buttonGroup":"Menu"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Andreeva",
+                            "label":"Портрет Андреевой",
+                            "buttonGroup":"Repin"
+                        },
+                        {
+                            "telemetrySignal":"Repin.Skeleton",
+                            "label":"Скелет",
+                            "buttonGroup":"Repin"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

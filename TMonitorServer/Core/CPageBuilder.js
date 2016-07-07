@@ -168,3 +168,29 @@ CPageBuilder.SSEHandler = function(pReq, pRes, pGSSE)
     pRes.end("ok");
     // pGSSE.GetResponse().write(`retry: 1000\n\n`);
 };
+CPageBuilder.ProjectsInfoHandler = function(pReq, pRes)
+{
+    auth.VerifyUser(pReq, (pUserInfo)=>{
+        if(pUserInfo.isAuthorized)
+        {
+            var projectAccessField = pUserInfo["project_access_field"].split(" ");
+            db.RetrieveProjectsInfo(AfterRetrieve);
+            function AfterRetrieve(pRows)
+            {
+                var projectsInfo = [];
+                for(var iX=0; iX<pRows.length; ++iX)
+                {
+                    if(projectAccessField.indexOf(pRows[iX]["project_id"].toString()) === -1)
+                        continue;
+                    projectsInfo.push(pRows[iX]);
+                }
+                
+                pRes.end(JSON.stringify(projectsInfo));
+            };
+        }
+        else
+        {
+            pRes.redirect("/");
+        }
+    });
+};

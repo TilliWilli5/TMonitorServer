@@ -9,5 +9,6 @@
     "webReg":"/reg",
     "webDashboard":"/dashboard",
     "webDevMonitor":"/devmonitor",
-    "webDevMonitorEvents":"/devmonitor/messages"
+    "webDevMonitorEvents":"/devmonitor/messages",
+    "webProjectsInfo":"/projectsInfo"
 }

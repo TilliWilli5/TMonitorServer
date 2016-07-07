@@ -143,3 +143,10 @@ CDatabaseBroker.RetrieveTelemetryStat = function(pOptions, pCallback)
 		pCallback(pRows);
 	});
 };
+CDatabaseBroker.RetrieveProjectsInfo = function(pCallback)
+{
+	var statement = `SELECT projects.name as projectName, ticket, instaName, token, project_id, installation_id, last_update FROM projects JOIN ( SELECT name AS instaName, token, project_id, installation_id, last_update FROM installations JOIN ( SELECT * FROM pings ) ON installation_id = installations.rowid ) ON project_id = projects.rowid;`;
+	db.all(statement, (pErrors, pRows)=>{
+		pCallback(pRows);
+	});
+};

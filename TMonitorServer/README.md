@@ -1,5 +1,6 @@
 ﻿# TMonitorServer
 HOWTO
+
 1. git clone https://github.com/TilliWilli5/TMonitorServer.git
 2. cd TMonitorServer/TMonitorServer
 3. npm install
@@ -7,13 +8,16 @@ HOWTO
 
 TODO
 
-1. Affix with SIgnout option
+v1. Affix with Signout option
 2. При новой авторизации инфа о старой сессии должна удаляться из баззы
 3. Сейчас не работает usid per session
 4. Попробовать добавить еще одну инсталяцию в telemetry.json
 5. При нажатии enter в последнем поле ввода на странице аутентификации необходимо делать валидацию
+6. Dashboard ProjectsInfo page - информация о проектах на первой странице дашбоарда - апйтайм онлайн/оффлайн ит.д.
+v7. Неправильно определяет currentProjectIndex => не работает для двух проектов
 
 DONE
+
 1. Кнопка Logout делает своё дело
 2. Можно выбирать дату с помощью datepicker. Дефолтная дата выбрана сегодняшнейc
 3. Показывается статистика в виде списков
@@ -21,4 +25,10 @@ DONE
 5. К проекту прилепленны HighCharts и работают
 
 IMPORTANT
+
 1. Не использовать arrow functions на фронт-енде потому что сранный Аппл не поддерживает
+
+WISHLIST
+
+1. SuperFeature
+

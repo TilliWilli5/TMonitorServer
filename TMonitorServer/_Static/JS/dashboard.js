@@ -55,9 +55,9 @@ function GotoStatsScreen(pTarget)
     var theScreen = $("#statsScreen div")[0];
 
     var currentInstallationIndex = Array.prototype.indexOf.call(pTarget.parentNode.parentNode.children, pTarget.parentNode);
-    var currentProjectIndex = Array.prototype.indexOf.call(pTarget.parentNode.parentNode.parentNode.children, pTarget.parentNode.parentNode);
+    var currentProjectIndex = Array.prototype.indexOf.call(pTarget.parentNode.parentNode.parentNode.parentNode.children, pTarget.parentNode.parentNode.parentNode);
     window.current = {};
-    window.current.project = currentProjectIndex - 1;
+    window.current.project = currentProjectIndex;
     window.current.installation = currentInstallationIndex;
     var buttonGroups = [];
     var curTelemetryStructure = data.telemetryConf[current.project].installations[current.installation].telemetry;
@@ -129,7 +129,10 @@ function ShowStats()
         {
             if(current.buttonGroup[current.bgs[iX]][iW])
             {
-                cats.push(current.buttonGroup[current.bgs[iX]][iW].name.slice(0,10) + "...");
+                if(current.buttonGroup[current.bgs[iX]][iW].name.length > 20)
+                    cats.push(current.buttonGroup[current.bgs[iX]][iW].name.slice(0,20) + "...");
+                else
+                    cats.push(current.buttonGroup[current.bgs[iX]][iW].name);
                 dataSet.push(current.buttonGroup[current.bgs[iX]][iW].value);
                 series.push({name:cats[cats.length-1], data:[dataSet[dataSet.length-1]]});
             }
@@ -188,4 +191,17 @@ function VisChart(pElementID, pCategories, pDataSet, pSeries)
         },
         series: pSeries
     });
+};
+function UpdateProjectsStates()
+{
+    $.ajax({
+               method:"POST",
+               url:"/projectsInfo",
+               data:JSON.stringify(data),
+               contentType:"application/json" 
+            }).done(UpdateProjectsStates);
+};
+function OnUpdateProjectsStates(pData)
+{
+
 };

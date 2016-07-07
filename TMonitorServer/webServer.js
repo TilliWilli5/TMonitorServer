@@ -56,7 +56,7 @@ app.get(config.webDevMonitor, function (req, res) {
 app.post(config.webDevMonitor, function (req, res) {
 	pb.DevMonitorHandler(req, res);
 });
-//Address like http://127.0.0.1/devmonitor/events
+//Address like http://127.0.0.1/devmonitor/messagesevents
 app.get(config.webDevMonitorEvents, function (req, res) {
 	pb.DevMonitorEventsHandler(req, res, gSSE);
 });
@@ -72,7 +72,10 @@ module.exports = gSSE;
 app.get("/sse", function (req, res) {
 	pb.SSEHandler(req, res, gSSE);
 });
-//
+//Address like http://127.0.0.1/projectsInfo
+app.get(config.webProjectsInfo, pb.ProjectsInfoHandler);
+app.post(config.webProjectsInfo, pb.ProjectsInfoHandler);
+//Должно оставаться последним
 app.use(function Response404(pReq, pRes, pNext){
 	pRes.status(404);
 	pRes.render("page404.html");
