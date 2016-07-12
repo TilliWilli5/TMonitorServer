@@ -5,7 +5,7 @@
             "name": "Запустить",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/webServer.js",
+            "program": "${workspaceRoot}/telemetryServer.js",
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
