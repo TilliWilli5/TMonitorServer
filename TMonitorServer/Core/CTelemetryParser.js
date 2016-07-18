@@ -85,13 +85,16 @@ CTelemetryParser.DispatchTelemetry = function (pReq, pRes) {
 	}
 }
 CTelemetryParser.FilterTelemetry = function (pNews) {
-	var _result = [];
-	for (var iX = 0; iX < pNews.length; ++iX) {
-		if (pNews[iX].type == 12)
-			continue;
-		_result.push(pNews[iX]);
-	}
-	return _result;
+	//В данный момент фильтр отключен - принимаются любые сообщения
+	return pNews;
+	//Фильтр включен - отсеиваются WindowDressing сообщения
+	// var _result = [];
+	// for (var iX = 0; iX < pNews.length; ++iX) {
+	// 	if (pNews[iX].type == 12)
+	// 		continue;
+	// 	_result.push(pNews[iX]);
+	// }
+	// return _result;
 }
 //������������ ������ ������
 module.exports = CTelemetryParser;

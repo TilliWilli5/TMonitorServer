@@ -1,0 +1,7 @@
+POST http://127.0.0.1:8812/telemetry HTTP/1.1
+User-Agent: Fiddler
+Content-Type: application/json
+Host: 127.0.0.1:8812
+Content-Length: 338
+
+{"tick":1,"sendingTime":"2016-07-13T14:12:00.163087+04:00","signature":"{\"installationToken\":\"TEST-MM\",\"installationDescription\":\"Тестовая сцена ММ\",\"sessionID\":\"00fe5a34-8c34-432e-8d30-4cdc7fb909ce\"}","message":"[{\"type\":1,\"creatingTime\":\"2016-07-13T14:10:44.6407674+04:00\",\"point\":\"MM.Continue\"}]"}

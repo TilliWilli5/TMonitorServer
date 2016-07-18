@@ -119,6 +119,7 @@ CPageBuilder.DashboardHandler = function(pReq, pRes)
     auth.VerifyUser(pReq, (pUserInfo)=>{
         if(pUserInfo.isAuthorized)
         {
+            var projectAccessField = pUserInfo["project_access_field"].split(" ");
             var data2client = {};
             calculator.CalcTelemetryStat(null, AfterCalc);
             function AfterCalc(pRows)
@@ -131,7 +132,20 @@ CPageBuilder.DashboardHandler = function(pReq, pRes)
                 {
                     data2client.userInfo = pUserInfo;
                     data2client.telemetryData = pRows;
-                    data2client.telemetryConf = tmConf.projects;
+                    var teleMetaData = [];
+                    //Filter projects available to current user
+                    for(var iX=0; iX<tmConf.projects.length; ++iX)
+                    {
+                        if( (projectAccessField.indexOf((iX+1).toString())) === -1)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            teleMetaData.push(tmConf.projects[iX]);
+                        }
+                    }
+                    data2client.telemetryConf = teleMetaData;
                     data2client = JSON.stringify(data2client);
                     pRes.render("dashboard.html", {data2client:`var data = ${data2client};`});
                     // pRes.render("dashboard.html", {data2client:JSON.stringify(data2client)});
