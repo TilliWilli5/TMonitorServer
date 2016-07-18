@@ -145,8 +145,27 @@ CDatabaseBroker.RetrieveTelemetryStat = function(pOptions, pCallback)
 };
 CDatabaseBroker.RetrieveProjectsInfo = function(pCallback)
 {
-	var statement = `SELECT projects.name as projectName, ticket, instaName, token, project_id, installation_id, last_update FROM projects JOIN ( SELECT name AS instaName, token, project_id, installation_id, last_update FROM installations JOIN ( SELECT * FROM pings ) ON installation_id = installations.rowid ) ON project_id = projects.rowid;`;
-	db.all(statement, (pErrors, pRows)=>{
-		pCallback(pRows);
-	});
+	var _result;
+	var lastUpdate = `SELECT projects.name as projectName, ticket, instaName, token, project_id, installation_id, last_update FROM projects JOIN ( SELECT name AS instaName, token, project_id, installation_id, last_update FROM installations JOIN ( SELECT * FROM pings ) ON installation_id = installations.rowid ) ON project_id = projects.rowid;`;
+	var lastQuit = `SELECT installation_id AS insta_id, MAX(datetime(created)) AS last_quit FROM telemetry WHERE type=12 GROUP BY installation_id`; 
+	db.all(lastUpdate, AfterLastUpdate);
+	function AfterLastUpdate(pErrors, pRows)
+	{
+		_result = pRows;
+		db.all(lastQuit, AfterLastQuit);
+	}
+	function AfterLastQuit(pErrors, pRows)
+	{
+		for(var iLastUpdateRow of _result)
+		{
+			// iLastUpdateRow["last_quit"] = iLastUpdateRow["last_update"];
+			iLastUpdateRow["last_quit"] = 0;
+			for(var iLastQuitRow of pRows)
+			{
+				if(iLastUpdateRow["installation_id"] === iLastQuitRow["insta_id"])
+					iLastUpdateRow["last_quit"] = iLastQuitRow["last_quit"];
+			}
+		}
+		pCallback(_result);
+	}
 };

@@ -6,20 +6,45 @@ $(document).ready(function(){
     $('#datetimepicker1').datetimepicker({language: 'ru', pickTime: false, defaultDate:(new Date())}).on("change", ShowStats);
     //VisProjectsScreen(data.telemetryConf);
     VisDashboardHeader(data.telemetryConf);
+    UpdateProjectsStates();
+    window.updateTimer = setInterval(UpdateProjectsStates, 60*1000);
 });
-
 function VisProjectsScreen(pProjectsInfo)
 {
-    pProjectsInfo.forEach(function(pProject){
-        var projectName = pProject.label;
-        var instaCount = pProject.installations.length;
-        var template = `<button type="button" class="btn btn-primary" style="cursor:pointer;" onclick="GotoInstallationsScreen();">${projectName} <span class="badge">${instaCount}</span></button>`;
-        $("#projectsScreen div").empty();
-        $("#projectsScreen div").append(template);
-        console.log("each");
-    });
-    
+    var theTable = `<table id="projectsInfo" class="table table-hover">
+                  <thead>
+                     <tr> <th>#</th> <th>Installation</th> <th>Status</th> <th>Uptime</th> </tr>
+                  </thead>
+                 <tbody>`;
+    var tBody = "";
+    var id = 0;
+    for(var ticket in pProjectsInfo)
+    {
+        tBody += `<tr><td colspan="4" style="text-align:center">${pProjectsInfo[ticket][0].projectName}</td></tr>\n`;
+        for(var oneInsta of pProjectsInfo[ticket])
+        {
+            ++id;
+            var trClass = "";
+            if(oneInsta.outdated === "notbad")
+                trClass = "warning";
+            else if(oneInsta.outdated === "outdated")
+                trClass = "danger";
+            tBody += `<tr class="${trClass}"> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td>${oneInsta.last_update}</td> </tr>\n`
+        }
+    }
+    theTable += tBody;
+    theTable += `                 </tbody>
+               </table>
+            </div>`;
+    // $("#projectsScreen").empty();
+    $("#projectsScreen").html(theTable);
 };
+function GotoProjectsScreen()
+{
+    $("#projectsScreen").show();
+    $("#statsScreen").hide();
+    $("#installationsScreen").hide();
+}
 function GotoInstallationsScreen()
 {
     $("#projectsScreen").hide();
@@ -152,28 +177,6 @@ function Logout()
 };
 function VisChart(pElementID, pCategories, pDataSet, pSeries)
 {
-    //Old simple graph
-    // $('#' + pElementID).highcharts({
-    //     chart: {
-    //         type: 'bar'
-    //     },
-    //     title: {
-    //         text: 'Buttons hits'
-    //     },
-    //     xAxis: {
-    //         categories: pCategories
-    //     },
-    //     yAxis: {
-    //         title: {
-    //             text: 'Hits count'
-    //         }
-    //     },
-    //     series: [{
-    //         name: 'Menu',
-    //         data: pDataSet
-    //     }]
-    // });
-
     $('#' + pElementID).highcharts({
         chart: {
             type: 'bar'
@@ -199,9 +202,11 @@ function UpdateProjectsStates()
                url:"/projectsInfo",
                data:JSON.stringify(data),
                contentType:"application/json" 
-            }).done(UpdateProjectsStates);
+            }).done(OnUpdateProjectsStates);
 };
 function OnUpdateProjectsStates(pData)
 {
-
+    data.projectsInfo = JSON.parse(pData);
+    console.log(`[Update ProjectsInfo]:successfully - ${new Date().toTimeString()}`);
+    VisProjectsScreen(data.projectsInfo);
 };

@@ -5,8 +5,8 @@ config.LoadFromFile("./Core/Configs/webConf.json");
 var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
+app.use(bodyParser.json({limit: '50mb'}));
 app.use("/_Static", express.static(config.staticFilesPath));
 
 const cons = require("consolidate");
@@ -14,7 +14,6 @@ const mustache = require("mustache");
 app.set("views", config.templateFolder);
 // app.set("view engine", "mustache");
 app.engine("html", cons.mustache);
-
 
 const pb = require("./Core/CPageBuilder.js");
 

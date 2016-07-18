@@ -9,6 +9,7 @@
         <!-- CSS includes -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="/_Static/CSS/general.css">
+        <link rel="stylesheet" href="/_Static/CSS/dashboard.css" />
         <!-- JS includes -->
         <script src="/_Static/JS/general.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -26,7 +27,7 @@
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-            <a class="navbar-brand" href="#">Dashboard</a>
+            <a class="navbar-brand" href="javascript:void(0);" onclick="GotoProjectsScreen();">Dashboard</a>
             </div>
             <ul id="instaNavigation" class="nav navbar-nav">
             </ul>
@@ -39,10 +40,6 @@
 
         <div class="container-fluid">
             <div id="projectsScreen" class="">
-                <!--<h2>Projects</h2>-->
-                <div>
-                    <!--<button type="button" class="btn btn-primary">Project name <span class="badge">9</span></button>-->
-                </div>
                 <!--<div id="projectsInfoHere">
                     <div class="panel panel-default">
                         <div class="panel-heading">Museum of Impressionism</div>
@@ -55,6 +52,24 @@
                         </div>
                     </div>
                 </div>-->
+               <table id="projectsInfo" class="table table-hover">
+                  <thead>
+                     <tr> <th>#</th> <th>Installation</th> <th>Status</th> <th>Uptime</th> </tr>
+                  </thead>
+                 <tbody>
+                    <tr><td colspan="4" style="text-align:center">Museum of Impressionism</td></tr>
+                    <tr> <td>1</td> <td>Диорамы Дети</td> <td><span class="label label-success">active</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>2</td> <td>Диорамы Взрослые</td> <td><span class="label label-success">active</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>3</td> <td>Научные эксперименты Скамья 1</td> <td><span class="label label-success">active</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
+                 </tbody>
+               </table>
             </div>
             <!--<div id="installationsScreen" class="">
                 <h2>Installations</h2>

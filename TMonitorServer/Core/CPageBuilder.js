@@ -177,12 +177,19 @@ CPageBuilder.ProjectsInfoHandler = function(pReq, pRes)
             db.RetrieveProjectsInfo(AfterRetrieve);
             function AfterRetrieve(pRows)
             {
-                var projectsInfo = [];
+                var projectsInfo = {};
                 for(var iX=0; iX<pRows.length; ++iX)
                 {
+                    //Исключаем проекты к кым у юзера нету доступа
                     if(projectAccessField.indexOf(pRows[iX]["project_id"].toString()) === -1)
                         continue;
-                    projectsInfo.push(pRows[iX]);
+                    //
+                    if(!projectsInfo[pRows[iX]["ticket"]])
+                        projectsInfo[pRows[iX]["ticket"]] = [];
+                    //Assign status
+                    AssignInstaStatus(pRows[iX]);
+                    projectsInfo[pRows[iX]["ticket"]].push(pRows[iX])
+                    // projectsInfo.push(pRows[iX]);
                 }
                 
                 pRes.end(JSON.stringify(projectsInfo));
@@ -193,4 +200,29 @@ CPageBuilder.ProjectsInfoHandler = function(pReq, pRes)
             pRes.redirect("/");
         }
     });
+    function AssignInstaStatus(pInstaInfo)
+    {
+        var oneMinute = 60*1000;//60 секундый интервал
+        pInstaInfo.status = "active";
+        pInstaInfo.outdated = "normal";
+        var lastPing = (new Date(pInstaInfo["last_update"])).getTime();
+        var lastQuit = (new Date(pInstaInfo["last_quit"])).getTime();
+        // if(pInstaInfo["last_quit"] === 0)
+        // {
+        //     pInstaInfo.status = "active";
+        // }
+        if(lastQuit > lastPing)
+        {
+            pInstaInfo.status = "stopped";
+        }
+        if(Date.now() - lastPing > 5*oneMinute)
+        {
+            pInstaInfo.outdated = "notbad";
+            if(Date.now() - lastPing > 15*oneMinute)
+            {
+                pInstaInfo.outdated = "outdated";
+                pInstaInfo.status = "stopped";
+            }
+        }
+    }
 };

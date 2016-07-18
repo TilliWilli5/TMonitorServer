@@ -1,6 +1,7 @@
 $(document).ready(function(){
     // var sse = new EventSource("http://95.213.151.109/devmonitor");
-    var sse = new EventSource(`http://${general.serverIP}/devmonitor/messages`);
+    //var sse = new EventSource(`http://${general.serverIP}/devmonitor/messages`);
+    var sse = new EventSource(`/devmonitor/messages`);
     sse.onmessage = function(pEvent)
     {
         console.log("New message has arrived");
@@ -31,7 +32,7 @@ function NewDataHandler(pData)
         head = `[${pData.tick}] Telemetry`;
         body = pData.message;
     }
-    var template = `<div id="panel${count}" class="panel panel-info">
+    var template = `<div id="panel${count}" class="panel panel-info" style="cursor: pointer;">
                     <div class="panel-heading"  data-toggle="collapse" data-target="#panelBody${count}">${head}</div>
                     <div id="panelBody${count}" class="panel-collapse collapse">
                         <div class="panel-body">${body}</div>

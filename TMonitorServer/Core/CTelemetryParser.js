@@ -59,7 +59,10 @@ CTelemetryParser.DispatchPing = function (pReq, pRes) {
 }
 CTelemetryParser.DispatchTelemetry = function (pReq, pRes) {
 	var signature = JSON.parse(pReq.body.signature);
-	var news = this.FilterTelemetry(JSON.parse(pReq.body.message));
+	// var fs = require("fs");
+	// fs.writeFileSync("messageObject.txt", pReq.body.message);
+	var messageObject = JSON.parse(pReq.body.message.replace(",,",",").replace(",,",","));//Иногда могут встречаться неправильно составленные логи с 2 запятыми подряд - этот костыль для исправления !!!! но впоследствии может приводить к багам так что надо рефакторить
+	var news = this.FilterTelemetry(messageObject);
 	if (news.length === 0) {
 		console.log("[Response]:")
 		console.log("thx");
@@ -90,5 +93,5 @@ CTelemetryParser.FilterTelemetry = function (pNews) {
 	}
 	return _result;
 }
-//������������ ������ ������
+//������������ ������ ������
 module.exports = CTelemetryParser;
