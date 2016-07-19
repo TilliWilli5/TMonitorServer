@@ -10,5 +10,6 @@
     "webDashboard":"/dashboard",
     "webDevMonitor":"/devmonitor",
     "webDevMonitorEvents":"/devmonitor/messages",
-    "webProjectsInfo":"/projectsInfo"
+    "webProjectsInfo":"/projectsInfo",
+    "webAbout":"/about"
 }

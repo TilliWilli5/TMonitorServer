@@ -240,3 +240,9 @@ CPageBuilder.ProjectsInfoHandler = function(pReq, pRes)
         }
     }
 };
+CPageBuilder.AboutHandler = function(pReq, pRes)
+{
+    require("./AboutGitVersion.js")((pVersionInfo)=>{
+        pRes.render("about.html", {GitVersionLog:pVersionInfo});
+    });
+};

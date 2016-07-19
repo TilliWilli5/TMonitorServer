@@ -74,6 +74,9 @@ app.get("/sse", function (req, res) {
 //Address like http://127.0.0.1/projectsInfo
 app.get(config.webProjectsInfo, pb.ProjectsInfoHandler);
 app.post(config.webProjectsInfo, pb.ProjectsInfoHandler);
+//Address like http://127.0.0.1/about
+app.get(config.webAbout, pb.AboutHandler);
+app.post(config.webAbout, pb.AboutHandler);
 //Должно оставаться последним
 app.use(function Response404(pReq, pRes, pNext){
 	pRes.status(404);
