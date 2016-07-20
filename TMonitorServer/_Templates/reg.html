@@ -8,58 +8,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS includes -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/_Static/CSS/general.css">
+        <link rel="icon" href="/_Static/VisualsFavicon.png">
         <!-- JS includes -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="/_Static/JS/reg.js"></script>
         <!-- Additionals includes -->
+        <link rel="stylesheet" href="/_Static/CSS/auth.css">
         {{headAdditional}}
     </head>
     <body>
         <div class="container-fluid">
-            <!-- Header -->
-            <div class="jumbotron text-center title">
-                <h1>TMonitor</h1>
+            <div class="row">
+            <div class="col-md-5"></div>
+            <div id="allContent" class="col-md-2">
+                    <!-- Header -->
+                    <div id="theTitleHead" class="jumbotron text-center title">
+                        <!--<h1></h1>-->
+                    </div>
+                    <!-- Form -->
+                    <form id="theRegForm" class="form-signin">
+                    <!--<h2 class="form-signin-heading text-center">Registration</h2>-->
+                    
+                    <div class="form-group has-feedback">
+                    <label for="inputLogin">Login</label>
+                    <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required autofocus>
+                    <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    
+                    <div class="form-group has-feedback">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                    <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    
+                    <div class="form-group has-feedback">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required>
+                    <span class="glyphicon form-control-feedback"></span>
+                    </div>
+                    <!--Success-->
+                    <div id="successBox" class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> New user account created. You will be redirected to auth page within 3 seconds.
+                    </div>
+                    <!--Fail-->
+                    <div id="failBox" class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>User exists!</strong> User with such login already exists.
+                    </div>
+                    <!--Subbmit button-->
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6"><button id="theSubmitButton" class="btn btn-lg btn-primary btn-block" type="button">Register</button></div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </form>
+                <div class="row text-center"><h4><a id="theRegLink" href="/auth">Sign in</a></h4></div>
             </div>
-            <!-- Form -->
-            <form id="theRegForm" class="form-signin">
-            <h2 class="form-signin-heading text-center">Registration</h2>
+            <div class="col-md-5"></div>
+            </div>
             
-            <div class="form-group has-feedback">
-            <label for="inputLogin">Login</label>
-            <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required autofocus>
-            <span class="glyphicon form-control-feedback"></span>
-            </div>
-            
-            <div class="form-group has-feedback">
-            <label for="inputPassword">Password</label>
-            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-            <span class="glyphicon form-control-feedback"></span>
-            </div>
-            
-            <div class="form-group has-feedback">
-            <label for="inputEmail">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required>
-            <span class="glyphicon form-control-feedback"></span>
-            </div>
-            <!--Success-->
-            <div id="successBox" class="alert alert-success">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> New user account created. You will be redirected to auth page within 3 seconds.
-            </div>
-            <!--Fail-->
-            <div id="failBox" class="alert alert-danger">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>User exists!</strong> User with such login already exists.
-            </div>
-            <!--Subbmit button-->
-            <button id="theSubmitButton" class="btn btn-lg btn-primary btn-block" type="button">Register</button>
-        </form>
-        <div class="text-center">
-            <h3>or</h3>
-            <h3><a href="/auth">Sign in</a></h3>
-        </div>
         <!-- Modal -->
         
         </div>

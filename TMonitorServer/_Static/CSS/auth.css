@@ -1,0 +1,61 @@
+body
+{
+    background-color: white;
+    width:100vw;
+    height:100vh;
+    padding-top:20vh;
+    /*margin-top:5em;*/
+    /*display:flex;
+    align-items: center;*/
+}
+.jumbotron
+{
+    background-color: rgba(0,0,0,0);
+    color:#222;
+    border-radius: 0px;
+}
+.container-fluid .jumbotron {
+    border-radius: 0px;
+}
+/*.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}*/
+/*.form-group has-feedback
+{
+    text-align: center;
+}*/
+/*#allContent
+{
+    width:30%;
+    margin-left:auto;
+    margin-right:auto;
+}*/
+#theTitleHead
+{
+    background-image: url("/_Static/VisualsIcon.png");
+    background-position: center;
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+}
+#theSubmitButton
+{
+    background: #00bef2;
+    border: 0px;
+}
+    #theSubmitButton:hover
+    {
+        background: #3bcaf1;
+    }
+#theRegLink
+{
+    color: #999;
+}
+#theRegForm
+{
+    margin-top: 4vh;
+}
+.container-fluid
+{
+    vertical-align:middle;
+}

@@ -13,7 +13,7 @@ function VisProjectsScreen(pProjectsInfo)
 {
     var theTable = `<table id="projectsInfo" class="table table-hover">
                   <thead>
-                     <tr> <th>#</th> <th>Installation</th> <th>Status</th> <th>Uptime</th> </tr>
+                     <tr> <th>#</th> <th>INSTALLATIONS</th> <th>STATUS</th> <th>UPTIME</th> </tr>
                   </thead>
                  <tbody>`;
     var tBody = "";

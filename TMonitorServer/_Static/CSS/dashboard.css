@@ -4,3 +4,17 @@ top:0;
 width: 100%;
 z-index: 9999 !important;
 }
+.navbar
+{
+border-radius: 0px;
+background-color: #ca1d48;
+}
+.panel-info > .panel-heading
+{
+    background: #00bef2;
+    color:white;
+}
+.row h4
+{
+    color: #999;
+}

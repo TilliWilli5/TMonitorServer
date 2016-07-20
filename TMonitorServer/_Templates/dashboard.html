@@ -8,10 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS includes -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/_Static/CSS/general.css">
+        <link rel="icon" href="/_Static/VisualsFavicon.png">
         <link rel="stylesheet" href="/_Static/CSS/dashboard.css" />
         <!-- JS includes -->
-        <script src="/_Static/JS/general.js"></script>
+        <!--<script src="/_Static/JS/general.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="/_Static/JS/dashboard.js"></script>
@@ -39,54 +39,45 @@
         </nav>
 
         <div class="container-fluid">
-            <div id="projectsScreen" class="">
-                <!--<div id="projectsInfoHere">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Museum of Impressionism</div>
-                        <div class="panel-body">
-                             <ul class="list-group">
-                                <li class="list-group-item">Диорамы Дети <span class="label label-success">active</span> uptime: 2016-07-07 17:15</li>
-                                <li class="list-group-item">Second item</li>
-                                <li class="list-group-item">Third item</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>-->
-               <table id="projectsInfo" class="table table-hover">
-                  <thead>
-                     <tr> <th>#</th> <th>Installation</th> <th>Status</th> <th>Uptime</th> </tr>
-                  </thead>
-                 <tbody>
-                    <tr><td colspan="4" style="text-align:center">Museum of Impressionism</td></tr>
-                    <tr> <td>1</td> <td>Диорамы Дети</td> <td><span class="label label-success">active</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>2</td> <td>Диорамы Взрослые</td> <td><span class="label label-success">active</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>3</td> <td>Научные эксперименты Скамья 1</td> <td><span class="label label-success">active</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                    <tr> <td>4</td> <td>Научные эксперименты Скамья 2</td> <td><span class="label label-default">none</span></td> <td>2016-07-07 17:15</td> </tr>
-                 </tbody>
-               </table>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id="projectsScreen" class="col-sm-8"></div>
+                <div class="col-sm-2"></div>
             </div>
-            <!--<div id="installationsScreen" class="">
-                <h2>Installations</h2>
-                <div>
-                    <h3 type="button" class="btn btn-primary">Project name <span class="badge">9</span></h3>
-                </div>
+            <!--<div id="projectsScreen" class="">
             </div>-->
             <div id="statsScreen" class="">
-                <h2>Stats</h2>
-	                <div class="form-group">
+                
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <h4 class="text-center">Pick a date</h4>
+                        <div id="projectsScreen">
+                            <div class="form-group">
+                                <div class="input-group date" id="datetimepicker1">
+                                <input type="text" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon-calendar glyphicon"></span>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+	                <!--<div class="form-group">
                         <div class="input-group date" id="datetimepicker1">
                         <input type="text" class="form-control" />
                         <span class="input-group-addon">
                             <span class="glyphicon-calendar glyphicon"></span>
                         </span>
                         </div>
-                    </div>
+                    </div>-->
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div id="statsHere" class="col-sm-8"></div>
+                    <div class="col-sm-2"></div>
+                </div>
                 <div id="statsHere">
 
                 </div>

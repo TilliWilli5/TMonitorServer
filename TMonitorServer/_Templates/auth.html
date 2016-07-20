@@ -8,56 +8,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS includes -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/_Static/CSS/general.css">
+        <link rel="icon" href="/_Static/VisualsFavicon.png">
+        <!--<link rel="stylesheet" href="/_Static/CSS/general.css">-->
         <!-- JS includes -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="/_Static/JS/auth.js"></script>
         <!-- Additionals includes -->
+        <link rel="stylesheet" href="/_Static/CSS/auth.css">
         {{headAdditional}}
     </head>
     <body>
         <div class="container-fluid">
-            <!-- Header -->
-            <div class="jumbotron text-center title">
-                <h1>TMonitor</h1>
+           <div class="row">
+              <div class="col-md-5"></div>
+              	        <div class="col-md-2" id="allContent">
+                             
+                            <!-- Header -->
+                                <div id="theTitleHead" class="jumbotron text-center title">
+                                    <!--<h1></h1>-->
+                                </div>
+                                <!-- Form -->
+                                <form id="theRegForm" class="form-signin">
+                                <!--<h2 class="form-signin-heading text-center">Sign in</h2>-->
+                                
+                                <div class="form-group has-feedback">
+                                <label for="inputLogin">Login</label>
+                                <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required autofocus>
+                                <span class="glyphicon form-control-feedback"></span>
+                                </div>
+                                
+                                <div class="form-group has-feedback">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                                <span class="glyphicon form-control-feedback"></span>
+                                </div>
+                                
+                                <div class="checkbox" style="visibility:hidden">
+                                <label>
+                                    <input id="rememberCheckbox" type="checkbox" name="remember" value="remember-me"> Remember me
+                                </label>
+                                </div>
+                                <div id="failBox" class="alert alert-danger">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Wrond login/password!</strong>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-3"></div>
+                                  <div class="col-md-6"><button id="theSubmitButton" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button></div>
+                                  <div class="col-md-3"></div>
+                                </div>
+                            </form>
+                            <!--<div class="row text-center"><h3>or</h3></div>-->
+                            <div class="row text-center"><h4><a id="theRegLink" href="/reg">Registration</a></h4></div>
+                        </div>
+              <div class="col-md-5"></div>
             </div>
-            <!-- Form -->
-            <form id="theRegForm" class="form-signin">
-            <h2 class="form-signin-heading text-center">Sign in</h2>
+           
+           </div>
             
-            <div class="form-group has-feedback">
-            <label for="inputLogin">Login</label>
-            <input type="text" id="inputLogin" class="form-control" name="login" placeholder="Login" required autofocus>
-            <span class="glyphicon form-control-feedback"></span>
-            </div>
-            
-            <div class="form-group has-feedback">
-            <label for="inputPassword">Password</label>
-            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-            <span class="glyphicon form-control-feedback"></span>
-            </div>
-            
-            <div class="checkbox">
-            <label>
-                <input id="rememberCheckbox" type="checkbox" name="remember" value="remember-me"> Remember me
-            </label>
-            </div>
-            <div id="failBox" class="alert alert-danger">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Wrond login/password!</strong>
-            </div>
-            <button id="theSubmitButton" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
-        </form>
-        <div class="text-center">
-            <h3>or</h3>
-            <h3><a href="/reg">Registration</a></h3>
-        </div>
-        
-        
-        <!-- Modal -->
-        
-        
-        </div>
     </body>
 </html>
