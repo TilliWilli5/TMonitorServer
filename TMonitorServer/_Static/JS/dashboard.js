@@ -11,10 +11,10 @@ $(document).ready(function(){
 });
 function VisProjectsScreen(pProjectsInfo)
 {
-    var theTable = `<table id="projectsInfo" class="table table-hover">
-                  <thead>
+    var theTable = `<div class="table-responsive"><table id="projectsInfo" class="table table-hover ">
+                  <!--<thead>
                      <tr> <th>#</th> <th>INSTALLATIONS</th> <th>STATUS</th> <th>UPTIME</th> </tr>
-                  </thead>
+                  </thead>-->
                  <tbody>`;
     var tBody = "";
     var id = 0;
@@ -25,19 +25,55 @@ function VisProjectsScreen(pProjectsInfo)
         {
             ++id;
             var trClass = "";
+            var pingClass = "success";
             if(oneInsta.outdated === "notbad")
+            {
                 trClass = "warning";
+                pingClass = "warning";
+            }
             else if(oneInsta.outdated === "outdated")
+            {
                 trClass = "danger";
-            tBody += `<tr class="${trClass}"> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td>${oneInsta.last_update}</td> </tr>\n`
+                pingClass = "danger";
+            }
+
+            // tBody += `<tr> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td><span class="label label-${pingClass}">${(new Date(oneInsta.last_update)).toTimeString().slice(0,5)}
+            tBody += `<tr> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td><span class="label label-${pingClass}">${RecalculateRelativeTime(new Date(oneInsta.last_update))}</span></td> </tr>\n`
         }
     }
     theTable += tBody;
     theTable += `                 </tbody>
-               </table>
-            </div>`;
+               </table></div>`;
     // $("#projectsScreen").empty();
     $("#projectsScreen").html(theTable);
+    function RecalculateRelativeTime(pLastPing)
+    {
+        var _result;
+        var deltaInSeconds = Math.round( (Date.now() - pLastPing.getTime())/1000);
+        if(deltaInSeconds >= 60)
+        {
+            if(deltaInSeconds >= 60*60)
+            {
+                if(deltaInSeconds >= 60*60*24)
+                {
+                    _result = `> 1 day ago`;
+                }
+                else
+                {
+                    _result = `${Math.round(deltaInSeconds/(60*60))} hours ago`;
+                }
+            }
+            else
+            {
+                _result = `${Math.round(deltaInSeconds/60)} minutes ago`;
+            }
+        }
+        else
+        {
+            _result = `${deltaInSeconds} seconds ago`;
+        }
+        return _result;
+    }
 };
 function GotoProjectsScreen()
 {
