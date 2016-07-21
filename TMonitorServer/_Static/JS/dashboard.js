@@ -38,7 +38,8 @@ function VisProjectsScreen(pProjectsInfo)
             }
 
             // tBody += `<tr> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td><span class="label label-${pingClass}">${(new Date(oneInsta.last_update)).toTimeString().slice(0,5)}
-            tBody += `<tr> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td><span class="label label-${pingClass}">${RecalculateRelativeTime(new Date(oneInsta.last_update))}</span></td> </tr>\n`
+            var fcknDateTime4Safari = new Date(moment(oneInsta.last_update).toISOString());
+            tBody += `<tr> <td>${id}</td> <td>${oneInsta.instaName}</td> <td><span class="label ${(oneInsta.status)==="active"?"label-success":"label-default"}">${oneInsta.status}</span></td> <td><span class="label label-${pingClass}">${RecalculateRelativeTime(fcknDateTime4Safari)}</span></td> </tr>\n`
         }
     }
     theTable += tBody;

@@ -119,6 +119,8 @@ CPageBuilder.DashboardHandler = function(pReq, pRes)
     auth.VerifyUser(pReq, (pUserInfo)=>{
         if(pUserInfo.isAuthorized)
         {
+            //Если у пользователя не задано ПроектноеПоле вообще тогда пусть будет пустая строка
+            pUserInfo["project_access_field"] = pUserInfo["project_access_field"]||"";
             var projectAccessField = pUserInfo["project_access_field"].split(" ");
             var data2client = {};
             calculator.CalcTelemetryStat(null, AfterCalc);
@@ -187,6 +189,8 @@ CPageBuilder.ProjectsInfoHandler = function(pReq, pRes)
     auth.VerifyUser(pReq, (pUserInfo)=>{
         if(pUserInfo.isAuthorized)
         {
+            //Если у пользователя не задано ПроектноеПоле вообще тогда пусть будет пустая строка
+            pUserInfo["project_access_field"] = pUserInfo["project_access_field"]||"";
             var projectAccessField = pUserInfo["project_access_field"].split(" ");
             db.RetrieveProjectsInfo(AfterRetrieve);
             function AfterRetrieve(pRows)
