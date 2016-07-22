@@ -184,14 +184,14 @@
                     "token":"256E3D2B-3A1B-44A2-9A82-39AF7A4AE810",
                     "telemetry":[
                         {
-                            "telemetrySignal":"Local.Ru",
+                            "telemetrySignal":"Locale.Ru",
                             "label":"Переключение языка - русский",
-                            "buttonGroup":"Local"
+                            "buttonGroup":"Locale"
                         },
                         {
-                            "telemetrySignal":"Local.En",
+                            "telemetrySignal":"Locale.En",
                             "label":"Переключение языка - английский",
-                            "buttonGroup":"Local"
+                            "buttonGroup":"Locale"
                         },
                         {
                             "telemetrySignal":"Menu.RepinSelect",

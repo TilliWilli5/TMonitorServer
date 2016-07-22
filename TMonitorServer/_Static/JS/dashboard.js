@@ -227,7 +227,8 @@ function VisChart(pElementID, pCategories, pDataSet, pSeries)
         yAxis: {
             title: {
                 text: 'Hits count'
-            }
+            },
+            allowDecimals: false
         },
         series: pSeries
     });
