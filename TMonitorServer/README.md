@@ -4,7 +4,6 @@ HOWTO
 1. git clone https://github.com/TilliWilli5/TMonitorServer.git
 2. cd TMonitorServer/TMonitorServer
 3. npm install
-4. Edit file _Static/JS/devmonitor.js line var sse = new EventSource("http://127.0.0.1/devmonitor/messages"); replace ip address to real server address
 
 TODO
 
@@ -26,7 +25,7 @@ TODO
 16. Может быть такой случай что приложение делает активным/неактивным AutoLoader.cs из Юнити тогда будут слаться сообщения о старте/остановки - в дальнейшем для обхода этого этого бага необходимо чтобы разработчик сам дергал сообщение о старте/остановки приложения
 17. Замечен баг с неудалением старых логов BugList#3
 18. По чек токену и телеметрическим сообщениям тоже обновлять пинг last_ping
-19. Я подумаваю над тем что бы на Странице:Dashboard в Колонке:UPTIME сделать badge и красить в разные цвета вместо окрашивания целой строки (потому что плохо выглядит)
+- 19. Я подумаваю над тем что бы на Странице:Dashboard в Колонке:UPTIME сделать badge и красить в разные цвета вместо окрашивания целой строки (потому что плохо выглядит)
 
 DONE
 

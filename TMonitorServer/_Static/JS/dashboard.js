@@ -248,3 +248,5 @@ function OnUpdateProjectsStates(pData)
     console.log(`[Update ProjectsInfo]:successfully - ${new Date().toTimeString()}`);
     VisProjectsScreen(data.projectsInfo);
 };
+var util = {};
+util.FindTeleSignal = function(pSignal){for(var item of data.telemetryData){if(item["tm.point"] == pSignal){console.log(item)}}};
