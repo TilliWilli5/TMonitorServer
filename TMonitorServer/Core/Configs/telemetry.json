@@ -65,8 +65,13 @@
                             "buttonGroup":"Colours"
                         },
                         {
-                            "telemetrySignal":"Colours.RunBetterfly",
+                            "telemetrySignal":"Colours.RunButterfly",
                             "label":"Выпустить бабочку",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.ButterflyColorChanged",
+                            "label":"Изменился цвет бабочки",
                             "buttonGroup":"Colours"
                         },
                         {
@@ -152,8 +157,13 @@
                             "buttonGroup":"Colours"
                         },
                         {
-                            "telemetrySignal":"Colours.RunBetterfly",
+                            "telemetrySignal":"Colours.RunButterfly",
                             "label":"Выпустить бабочку",
+                            "buttonGroup":"Colours"
+                        },
+                        {
+                            "telemetrySignal":"Colours.ButterflyColorChanged",
+                            "label":"Изменился цвет бабочки",
                             "buttonGroup":"Colours"
                         },
                         {
