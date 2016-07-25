@@ -11,5 +11,6 @@
     "webDevMonitor":"/devmonitor",
     "webDevMonitorEvents":"/devmonitor/messages",
     "webProjectsInfo":"/projectsInfo",
-    "webAbout":"/about"
+    "webAbout":"/about",
+    "webReplicationDB":"/replicationDB"
 }

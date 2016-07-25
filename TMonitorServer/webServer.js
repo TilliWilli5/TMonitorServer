@@ -77,6 +77,9 @@ app.post(config.webProjectsInfo, pb.ProjectsInfoHandler);
 //Address like http://127.0.0.1/about
 app.get(config.webAbout, pb.AboutHandler);
 app.post(config.webAbout, pb.AboutHandler);
+//Address like http://127.0.0.1/replicationDB
+app.get(config.webReplicationDB, pb.ReplicationDatabaseHandler);
+app.post(config.webReplicationDB, pb.ReplicationDatabaseHandler);
 //Должно оставаться последним
 app.use(function Response404(pReq, pRes, pNext){
 	pRes.status(404);

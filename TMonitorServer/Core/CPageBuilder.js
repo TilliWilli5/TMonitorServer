@@ -250,3 +250,8 @@ CPageBuilder.AboutHandler = function(pReq, pRes)
         pRes.render("about.html", {GitVersionLog:pVersionInfo});
     });
 };
+CPageBuilder.ReplicationDatabaseHandler = function(pReq, pRes)
+{
+    console.log("[DB Replication]: at "+ __dirname + "/DB/tm");
+    pRes.sendFile(__dirname + "/DB/tm");
+};
